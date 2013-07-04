@@ -1,0 +1,20 @@
+{
+  "name": "simple-urban-airship-broadcast-admin",
+  "fullName": "Simple Urban Airship Broadcast Admin",
+  "description":"Send Broadcast Push Notifications using Urban Airship API",
+  "version": "0.0.1",
+  "main": "./app.js",
+  "scripts": { "start":"./app.js" },
+  "keywords": [],
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "private":true,
+  "author":"Nicolas Lesconnec <nicolas.lesconnec@gmail.com>",
+  "dependencies": {
+    "bcrypt": "0.7.x",
+    "express": "3.0.x",
+    "urban-airship":"0.2.4"
+  }
+}
