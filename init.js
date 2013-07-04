@@ -21,8 +21,8 @@ process.stdin.once('data', function (data){
 		console.log('\tLOG_PASSWORD:"'+sanitizeOutput(credentials.password)+'"\n');
 
 		console.log('If the app is running on heroku, run the following commands :');
-		console.log('\t $ heroku config:set LOG_USERNAME:'+credentials.username);
-		console.log('\t $ heroku config:set LOG_PASSWORD:'+credentials.password);
+		console.log('\t $ heroku config:set LOG_USERNAME='+credentials.username);
+		console.log('\t $ heroku config:set LOG_PASSWORD='+credentials.password);
 
 		process.exit(0);
 	});
