@@ -2,6 +2,9 @@ $(document).ready(function(){
 	$('#submit').on('click', submit);
 	$('.form').on('keydown', function(evt){
 		if (evt.keyCode==13){
+			if (evt.target.tagName.toLowerCase()==='textarea'){
+				return;
+			}
 			submit.call(this, evt);
 		}
 	});
