@@ -91,14 +91,22 @@ app.post('/broadcast',logged, function(req, res){
 	/**
 	* Check that the expected params have been sent
 	**/
-	if (!req.body || !req.body.message){
+	if (!req.body || !req.body.message || (req.body.iOS==='false' && req.body.android==='false')){
 		res.status(400);
 		return res.json({msg:'Invalid request'});
 	}
 	/**
 	* Publish broadcast message
 	**/
-	UAClient.pushNotification("/api/push/broadcast/", {aps:{alert:req.body.message}}, function(err) {
+	var notification = {};
+	if (req.body.iOS==='true'){
+
+		notification.aps = {alert:req.body.message};
+	}
+	if (req.body.android==='true'){
+		notification.android = {alert:req.body.message};
+	}
+	UAClient.pushNotification("/api/push/broadcast/", notification, function(err) {
 		if (err){
 			console.log("UA err", err);
 			res.status(500);
