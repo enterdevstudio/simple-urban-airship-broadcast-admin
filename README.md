@@ -18,11 +18,23 @@ Using the Urban Airship API & node module
 
 ###1. Set up the admin credentials
 
-Run 
-```
-$ node ./init.js
-```
+Run
+
+
+		$ node ./init.js
+
 And set the appropriate env variables
+
+* Urban Airship
+	*	UA_KEY
+	* UA_SECRET
+	* UA_MASTER
+* Login credentials
+	*  LOG_USERNAME
+	* LOG_PASSWORD
+* App info
+	* APP_NAME
+	* APP_DESCRIPTION
 
 ###2. Get your urban airship keys
 
@@ -34,8 +46,9 @@ And set the appropriate env variables
 ###3. Run
 
 
+	$ node UA_KEY="Your urban airship key" UA_SECRET="Your urban airship secret key" "UA_MASTER"="Your urban airship master secret key" LOG_USERNAME="Username to log in" LOG_PASSWORD="Hash set on 1."
 ```
-$ node UA_KEY="Your urban airship key" UA_SECRET="Your urban airship secret key" "UA_MASTER"="Your urban airship master secret key" LOG_USERNAME="Username to log in" LOG_PASSWORD="Hash set on 1."
+
 
 ###2. Log in
 

@@ -52,16 +52,19 @@ app.use(express.session({
 );
 app.use(express.favicon());
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 
 /* routes */
 app.get('/', logged, function(req, res){
 	res.set('Content-Type', 'text/html');
-	res.sendfile('./public/compose-broadcast.html');
+	//res.sendfile('./public/compose-broadcast.html');
+	res.render('compose', {title:process.env.APP_TITLE});
 });
 app.get('/signin', function(req, res){
 	res.set('Content-Type', 'text/html');
-	res.sendfile('./public/signin.html');
+	//res.sendfile('./public/signin.html');
+	res.render('signin', {title:process.env.APP_TITLE});
 });
 app.post('/signin', function(req, res){
 	if (!req.body || !req.body.username || !req.body.password){
